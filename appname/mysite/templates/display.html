@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block title %}Display{% endblock %}
+
+{% block body %}
+<ul>
+    {% for item in form %}
+    <li>X: {{ item.x }}</li>
+    <li>Y: {{ item.y }}</li>
+    <li>Sign: {{ item.sign }}</li>
+    {% if item.sign == "+" %}
+    <li>Operation: {{ item.x }} + {{ item.y }} = {{ item.result }}</li>
+    {% elif item.sign == "-" %}
+    <li>Operation: {{ item.x }} - {{ item.y }} = {{ item.result }}</li>
+    {% elif item.sign == "*" %}
+    <li>Operation: {{ item.x }} * {{ item.y }} = {{ item.result }}</li>
+    {% elif item.sign == "/" %}
+    <li>Operation: {{ item.x }} / {{ item.y }} = {{ item.result }}</li>
+    {% endif %}
+    <br><br>
+    {% endfor %}
+</ul>
+{% endblock %}
